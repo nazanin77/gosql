@@ -1,0 +1,12 @@
+{{ define "Edit" }}
+  {{ template "Header" }}
+    {{ template "Menu" }} 
+   <h2>Edit Name and family</h2>  
+    <form method="POST" action="/update">
+      <input type="hidden" name="Id" value="{{ .Id }}" />
+      <label> Fname </label><input type="text" name="Fname" value="{{ .Fname }}"  /><br />
+      <label> Lname </label><input type="text" name="Lname" value="{{ .Lname }}"  /><br />
+      <input type="submit" value="Save user" />
+    </form><br />    
+  {{ template "Footer" }}
+{{ end }}
