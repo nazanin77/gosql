@@ -6,42 +6,12 @@ import (
 		"log"
         "net/http"
 		"text/template"
-		//"fmt"
-)
-
-type student struct {
-	Id  int
-	Fname  string
-	Lname string
-}
-
-func dbConn() (db *sql.DB) {
-
-	dbDriver := "mysql"
-	dbUser := "root"
-	dbPass := ""
-	dbName := "uni"
-	db, err := sql.Open(dbDriver, dbUser+":"+dbPass+"@/"+dbName)
-	if err != nil {
-		panic(err.Error())
-}
-	return db
-}
-
-var tmpl = template.Must(template.ParseGlob("form/*"))
-
-func Index(w http.ResponseWriter, r *http.Request) {
-		db := dbConn()
-		selDB, err := db.Query("SELECT * FROM tbl_student ORDER BY Id DESC")
-		if err != nil {
+		//"fmt"!= nil {
 			panic(err.Error())
 }
 		st := student{}
 		res := []student{}
-		for selDB.Next() {
-				var Id int
-				var Fname, Lname string
-				err = selDB.Scan(&Id, &Fname, &Lname)
+		for.Scan(&Id, &Fname, &Lname)
 				if err != nil {
 					panic(err.Error())
 }
@@ -62,11 +32,7 @@ func Show(w http.ResponseWriter, r *http.Request) {
     	panic(err.Error())
 }
 	st := student{}
-	for selDB.Next() {
-		var Id int
-		var Fname, Lname string
-		err = selDB.Scan(&Id, &Fname, &Lname)
-		if err != nil {
+	for selDB.Next
 			panic(err.Error())
 }
 	    st.Id = Id
